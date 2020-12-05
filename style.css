@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
+*{
+  
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;  
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color:rgb(13, 122, 224);
+  background: url('note.jpg');
+  width: 100%;
+  height: 100%;
+  position: fixed;
+
+}
+.sidebar {
+  position: fixed;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: #014a7a;
+  transition: all .5s ease;
+}
+.sidebar header {
+  font-size: 20px;
+  color: white;
+  line-height: 70px;
+  text-align: center;
+  background: #3498db;
+  user-select: none;
+}
+.sidebar ul a{
+  display: block;
+  height: 100%;
+  width: 100%;
+  line-height: 65px;
+  font-size: 18px;
+  color: white;
+  padding-left: 40px;
+  box-sizing: border-box;
+  border-bottom: 1px solid black;
+  border-top: 1px solid rgba(255,255,255,.1);
+  transition: .4s;
+}
+ul li:hover a{
+  padding-left: 50px;
+}
+.sidebar ul a i{
+  margin-right: 16px;
+}
+#check{
+  display: none;
+}
+label #btn,label #cancel{
+  position: absolute;
+  background: #3498db;
+  border-radius: 3px;
+  cursor: pointer;
+}
+label #btn{
+  left: 40px;
+  top: 25px;
+  font-size: 35px;
+  color: white;
+  padding: 6px 12px;
+  transition: all .5s;
+}
+label #cancel{
+  z-index: 1111;
+  left: -195px;
+  top: 17px;
+  font-size: 30px;
+  color: #014a7a;
+  padding: 4px 9px;
+  transition: all .5s ease;
+}
+#check:checked ~ .sidebar{
+  left: 0;
+}
+#check:checked ~ label #btn{
+  left: 250px;
+  opacity: 0;
+  pointer-events: none;
+}
+#check:checked ~ label #cancel{
+  left: 195px;
+}
+#check:checked ~ section{
+  margin-left: 250px;
+}
+
+/*CSS DAS MÍDIAS*/
+
+.sociais{
+  position: absolute;
+  top: 95%;
+  transform: translateY(-70%);
+  width: 100%;
+  text-align: center;  
+}
+.btn{
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background: #f1f1f1;
+  margin: 6px;
+  border-radius: 30%;
+  box-shadow: 0 15px 15px -15px #00000070;
+  color: #3498db;
+  overflow: hidden;
+  position: relative;
+}
+.btn i{
+  line-height: 50px;
+  font-size: 30px;
+  transition: 0.2s linear;
+}
+.btn:hover i{
+  transform: scale(1.3);
+  color: #3498db;  
+}
+.btn::before{
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 120%;
+}
+.btn:hover::before{
+  animation: aaa 0.7s 1;
+  top: -10%;
+  left: -10%;
+}
